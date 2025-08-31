@@ -20,7 +20,8 @@ DEBUG = os.environ.get("DEBUG", "False") == "True"
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    os.environ.get("RENDER_EXTERNAL_HOSTNAME", ""),  # Render sets this automatically
+    os.environ.get("RENDER_EXTERNAL_HOSTNAME", ""),  # automatically set by Render
+    "travel-budget-backend.onrender.com",            # explicitly add your Render URL
 ]
 
 # -------------------------------
@@ -84,7 +85,7 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
     CORS_ALLOWED_ORIGINS = [
-        "https://qatta.netlify.app",  # your frontend URL
+        "https://qatta.netlify.app",
     ]
 
 # -------------------------------
